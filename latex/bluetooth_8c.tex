@@ -1,0 +1,363 @@
+\section{C\+:/\+Zumo Bluetooth/bluetooth.c File Reference}
+\label{bluetooth_8c}\index{C\+:/\+Zumo Bluetooth/bluetooth.\+c@{C\+:/\+Zumo Bluetooth/bluetooth.\+c}}
+
+
+Bluetooth library for K\+L46\+Z and H\+C-\/06 module.  
+
+
+{\ttfamily \#include \char`\"{}M\+K\+L46\+Z4.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bluetooth.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler} (void)
+\begin{DoxyCompactList}\small\item\em Interrupt handler. \end{DoxyCompactList}\item 
+void {\bf bt\+\_\+init} (uint32\+\_\+t baud\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Initialize the U\+A\+R\+T module and prepare both buffers. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bf bt\+\_\+send\+Char} (char data)
+\begin{DoxyCompactList}\small\item\em Function sends one byte (Really, it adds byte to transmit buffer and starts the transmission). \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bf bt\+\_\+send\+Str} (const char $\ast$source)
+\begin{DoxyCompactList}\small\item\em Function sends string. It adds characters to Tx buffer like \doxyref{bt\+\_\+send\+Char}{p.}{bluetooth_8h_a6231f952dfce20a3235815eb0143cced}. \end{DoxyCompactList}\item 
+char {\bf bt\+\_\+get\+Char} (void)
+\begin{DoxyCompactList}\small\item\em Function that reads a single character from Rx buffer (if there is any). \end{DoxyCompactList}\item 
+void {\bf bt\+\_\+get\+Str} (char $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Function copies string from Rx buffer (if there is any) to destination array. \end{DoxyCompactList}\item 
+void {\bf buf\+\_\+clear} (volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function clears data (writes zeros to all structure's fields) \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bf buf\+\_\+empty} (const volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function checks whether buffer is empty. \end{DoxyCompactList}\item 
+uint8\+\_\+t {\bf buf\+\_\+full} (const volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function checks whether buffer is full. \end{DoxyCompactList}\item 
+void {\bf to\+\_\+\+U\+A\+R\+T\+\_\+buffer} (const char c, volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function getting one character from any U\+A\+R\+T buffer. \end{DoxyCompactList}\item 
+char {\bf from\+\_\+\+U\+A\+R\+T\+\_\+buffer} (volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function getting one character from any U\+A\+R\+T buffer. \end{DoxyCompactList}\item 
+void {\bf overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer} (const char c, volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Function that replaces the oldest character in buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} {\bf Rx\+Buf}\label{bluetooth_8c_a0b92d6781d419829ac248ec701982118}
+
+\begin{DoxyCompactList}\small\item\em Circular buffer for received data. \end{DoxyCompactList}\item 
+volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} {\bf Tx\+Buf}\label{bluetooth_8c_abef669148df3caa8d894a8a16290d528}
+
+\begin{DoxyCompactList}\small\item\em Circular buffer for transmitting data. \end{DoxyCompactList}\item 
+volatile int16\+\_\+t {\bf string\+\_\+count} = 0\label{bluetooth_8c_ae0b07eb3386d833f10670a32c37926e8}
+
+\begin{DoxyCompactList}\small\item\em Quantity of strings in Rx buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bluetooth library for K\+L46\+Z and H\+C-\/06 module. 
+
+
+
+Definition in file {\bf bluetooth.\+c}.
+
+
+
+\subsection{Function Documentation}
+\index{bluetooth.\+c@{bluetooth.\+c}!bt\+\_\+get\+Char@{bt\+\_\+get\+Char}}
+\index{bt\+\_\+get\+Char@{bt\+\_\+get\+Char}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{bt\+\_\+get\+Char}]{\setlength{\rightskip}{0pt plus 5cm}char bt\+\_\+get\+Char (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_aaf6401bea615560b2317eadeec074670}
+
+
+Function that reads a single character from Rx buffer (if there is any). 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em uint8\+\_\+t} & 
+\begin{DoxyItemize}
+\item 0 = Buffer empty or '\textbackslash{}0' character (end of string) 
+\item other = valid data 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+0 (N\+U\+L\+L) and 13 (C\+R) are reserved. For one-\/byte commands use another character. For more details see interrupt handler. 
+\end{DoxyWarning}
+
+
+Definition at line 203 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!bt\+\_\+get\+Str@{bt\+\_\+get\+Str}}
+\index{bt\+\_\+get\+Str@{bt\+\_\+get\+Str}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{bt\+\_\+get\+Str}]{\setlength{\rightskip}{0pt plus 5cm}void bt\+\_\+get\+Str (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{destination}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_ad9503dbabb1f203a372431cb89c3d1f0}
+
+
+Function copies string from Rx buffer (if there is any) to destination array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em destination} & Pointer to character array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Be sure that destination table is big enough to contain incoming string. Incoming string has to be ended with a (N\+U\+L\+L) or (C\+R) character. 
+\end{DoxyWarning}
+
+
+Definition at line 225 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!bt\+\_\+init@{bt\+\_\+init}}
+\index{bt\+\_\+init@{bt\+\_\+init}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{bt\+\_\+init}]{\setlength{\rightskip}{0pt plus 5cm}void bt\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{baud\+\_\+rate}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_abf5b078a34f2140691ca6f10aa5197e1}
+
+
+Initialize the U\+A\+R\+T module and prepare both buffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em baud\+\_\+rate} & is speed of transmission. You can also use macro \doxyref{B\+A\+U\+D\+\_\+\+R\+A\+T\+E}{p.}{bluetooth_8h_ad4455691936f92fdd6c37566fc58ba1f}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Be sure that C\+L\+O\+C\+K\+\_\+\+S\+E\+T\+U\+P in \char`\"{}system\+\_\+\+M\+K\+L46\+Z4.\+c\char`\"{} equals 1. 
+\end{DoxyWarning}
+
+
+Definition at line 82 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!bt\+\_\+send\+Char@{bt\+\_\+send\+Char}}
+\index{bt\+\_\+send\+Char@{bt\+\_\+send\+Char}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{bt\+\_\+send\+Char}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t bt\+\_\+send\+Char (
+\begin{DoxyParamCaption}
+\item[{char}]{data}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_a6231f952dfce20a3235815eb0143cced}
+
+
+Function sends one byte (Really, it adds byte to transmit buffer and starts the transmission). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Byte to send \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em uint8\+\_\+t} & 
+\begin{DoxyItemize}
+\item 0 = Failure 
+\item 1 = Success 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 161 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!bt\+\_\+send\+Str@{bt\+\_\+send\+Str}}
+\index{bt\+\_\+send\+Str@{bt\+\_\+send\+Str}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{bt\+\_\+send\+Str}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t bt\+\_\+send\+Str (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{source}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_ad0c7b930ecc1ce44a99e41a0a7cc7fff}
+
+
+Function sends string. It adds characters to Tx buffer like \doxyref{bt\+\_\+send\+Char}{p.}{bluetooth_8h_a6231f952dfce20a3235815eb0143cced}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Pointer to string (name of array that contains characters) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em uint8\+\_\+t} & 
+\begin{DoxyItemize}
+\item 0 = Failure 
+\item 1 = Success 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+String has to be ended with a '\textbackslash{}0' (N\+U\+L\+L) character! 
+\end{DoxyWarning}
+
+
+Definition at line 184 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!buf\+\_\+clear@{buf\+\_\+clear}}
+\index{buf\+\_\+clear@{buf\+\_\+clear}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{buf\+\_\+clear}]{\setlength{\rightskip}{0pt plus 5cm}void buf\+\_\+clear (
+\begin{DoxyParamCaption}
+\item[{volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_a19f2c1bf41e4fa3bb97a0ef550356392}
+
+
+Function clears data (writes zeros to all structure's fields) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to any U\+A\+R\+T buffer. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 245 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!buf\+\_\+empty@{buf\+\_\+empty}}
+\index{buf\+\_\+empty@{buf\+\_\+empty}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{buf\+\_\+empty}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t buf\+\_\+empty (
+\begin{DoxyParamCaption}
+\item[{const volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_acf002eda3b772a17cfb416ca999f84d9}
+
+
+Function checks whether buffer is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to any U\+A\+R\+T buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em uint8\+\_\+t} & 
+\begin{DoxyItemize}
+\item 0 = False 
+\item 1 = True 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 256 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!buf\+\_\+full@{buf\+\_\+full}}
+\index{buf\+\_\+full@{buf\+\_\+full}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{buf\+\_\+full}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t buf\+\_\+full (
+\begin{DoxyParamCaption}
+\item[{const volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_a0a38256cc7becaad1b0424b76767a3ae}
+
+
+Function checks whether buffer is full. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to any U\+A\+R\+T buffer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em uint8\+\_\+t} & 
+\begin{DoxyItemize}
+\item 0 = False 
+\item 1 = True 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 262 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!from\+\_\+\+U\+A\+R\+T\+\_\+buffer@{from\+\_\+\+U\+A\+R\+T\+\_\+buffer}}
+\index{from\+\_\+\+U\+A\+R\+T\+\_\+buffer@{from\+\_\+\+U\+A\+R\+T\+\_\+buffer}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{from\+\_\+\+U\+A\+R\+T\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}char from\+\_\+\+U\+A\+R\+T\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_af301032f8dd5c1e08344b5488efe11aa}
+
+
+Function getting one character from any U\+A\+R\+T buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & Pointer to buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return value is the oldest character in buffer. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Function does not check whether buffer is empty. 
+\end{DoxyWarning}
+
+
+Definition at line 276 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer@{overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer}}
+\index{overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer@{overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}void overwrite\+\_\+\+U\+A\+R\+T\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{const char}]{c, }
+\item[{volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_a8db7fd3b6daecfe7f380c8dcdd62f88f}
+
+
+Function that replaces the oldest character in buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & New character \\
+\hline
+{\em b} & Pointer to buffer where 'c' character will be written \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 287 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!to\+\_\+\+U\+A\+R\+T\+\_\+buffer@{to\+\_\+\+U\+A\+R\+T\+\_\+buffer}}
+\index{to\+\_\+\+U\+A\+R\+T\+\_\+buffer@{to\+\_\+\+U\+A\+R\+T\+\_\+buffer}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{to\+\_\+\+U\+A\+R\+T\+\_\+buffer}]{\setlength{\rightskip}{0pt plus 5cm}void to\+\_\+\+U\+A\+R\+T\+\_\+buffer (
+\begin{DoxyParamCaption}
+\item[{const char}]{c, }
+\item[{volatile {\bf U\+A\+R\+T\+\_\+\+B\+U\+F\+\_\+t} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_a3db86f1993d3e7f684d9e35e2e850051}
+
+
+Function getting one character from any U\+A\+R\+T buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & New character \\
+\hline
+{\em b} & Pointer to buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Function does not check whether buffer is full. 
+\end{DoxyWarning}
+
+
+Definition at line 268 of file bluetooth.\+c.
+
+\index{bluetooth.\+c@{bluetooth.\+c}!U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler@{U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler@{U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler}!bluetooth.\+c@{bluetooth.\+c}}
+\subsubsection[{U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void U\+A\+R\+T2\+\_\+\+I\+R\+Q\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{bluetooth_8c_ac20eca44aeea90e6f603831193cc9b28}
+
+
+Interrupt handler. 
+
+It reacts to byte coming or empty D buffer (in U\+A\+R\+T module). Incoming C\+R character is converted to N\+U\+L\+L (for comfortable usage of terminal e.\+g. Putty) 
+
+Definition at line 27 of file bluetooth.\+c.
+
