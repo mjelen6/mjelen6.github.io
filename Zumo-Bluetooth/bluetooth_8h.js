@@ -11,7 +11,7 @@ var bluetooth_8h =
     [ "bt_getChar", "bluetooth_8h.html#aaf6401bea615560b2317eadeec074670", null ],
     [ "bt_getStr", "bluetooth_8h.html#ad9503dbabb1f203a372431cb89c3d1f0", null ],
     [ "bt_init", "bluetooth_8h.html#abf5b078a34f2140691ca6f10aa5197e1", null ],
-    [ "bt_sendChar", "bluetooth_8h.html#a6231f952dfce20a3235815eb0143cced", null ],
+    [ "bt_sendChar", "bluetooth_8h.html#a7ad312bfb82fbf108c481ba2170921f7", null ],
     [ "bt_sendStr", "bluetooth_8h.html#ad0c7b930ecc1ce44a99e41a0a7cc7fff", null ],
     [ "buf_clear", "bluetooth_8h.html#a19f2c1bf41e4fa3bb97a0ef550356392", null ],
     [ "buf_empty", "bluetooth_8h.html#acf002eda3b772a17cfb416ca999f84d9", null ],
