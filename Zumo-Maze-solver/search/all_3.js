@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['head',['head',['../struct_u_a_r_t___b_u_f__t.html#ae0411d119b6e19281b04bbe57cc854bc',1,'UART_BUF_t']]]
+  ['from_5fuart_5fbuffer',['from_UART_buffer',['../bluetooth_8c.html#af301032f8dd5c1e08344b5488efe11aa',1,'from_UART_buffer(volatile UART_BUF_t *b):&#160;bluetooth.c'],['../bluetooth_8h.html#af301032f8dd5c1e08344b5488efe11aa',1,'from_UART_buffer(volatile UART_BUF_t *b):&#160;bluetooth.c']]]
 ];

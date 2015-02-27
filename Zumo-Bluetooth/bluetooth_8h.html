@@ -218,7 +218,7 @@ volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Defines speed of transmission. </p>
 <p>Default communication baud rate in HC-06 is 9600. Others are available by changing settings in AT-mode of module. </p>
 
-<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00028">28</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00029">29</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
 
 </div>
 </div>
@@ -235,7 +235,7 @@ volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>Defines number of bytes in Rx and Tx buffers. </p>
 <p>It can be any number, but too big buffers may cause memory problems. </p>
 
-<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00033">33</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00034">34</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
 
 </div>
 </div>
@@ -252,7 +252,7 @@ volatile int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 <p>When OVERWRITE is set and Rx buffer is full the oldest character will be replaced by receiving data. </p>
 <dl class="section warning"><dt>Warning</dt><dd>It can be ONLY 0 or 1! OVERWRITE==1 is required when "string" functions (<a class="el" href="bluetooth_8h.html#ad9503dbabb1f203a372431cb89c3d1f0" title="Function copies string from Rx buffer (if there is any) to destination array. ">bt_getStr</a>, <a class="el" href="bluetooth_8h.html#ad0c7b930ecc1ce44a99e41a0a7cc7fff" title="Function sends string. It adds characters to Tx buffer like bt_sendChar. ">bt_sendStr</a>) are used. Otherwise Tx buffer lock may occur (<a class="el" href="bluetooth_8h.html#ad9503dbabb1f203a372431cb89c3d1f0" title="Function copies string from Rx buffer (if there is any) to destination array. ">bt_getStr</a> uses <a class="el" href="bluetooth_8h.html#ae0b07eb3386d833f10670a32c37926e8" title="Quantity of strings in Rx buffer. ">string_count</a> which is incremented by NULL incoming character). Functions guarantee the continuity of strings, but use it carefully. Best way is to use still same type of functions (for example <a class="el" href="bluetooth_8h.html#aaf6401bea615560b2317eadeec074670" title="Function that reads a single character from Rx buffer (if there is any). ">bt_getChar</a>, <a class="el" href="bluetooth_8h.html#a7ad312bfb82fbf108c481ba2170921f7" title="Function sends one byte (Really, it adds byte to transmit buffer and starts the transmission). ">bt_sendChar</a> / <a class="el" href="bluetooth_8h.html#ad9503dbabb1f203a372431cb89c3d1f0" title="Function copies string from Rx buffer (if there is any) to destination array. ">bt_getStr</a>, <a class="el" href="bluetooth_8h.html#ad0c7b930ecc1ce44a99e41a0a7cc7fff" title="Function sends string. It adds characters to Tx buffer like bt_sendChar. ">bt_sendStr</a>). </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00042">42</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00043">43</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
 
 </div>
 </div>
@@ -277,7 +277,7 @@ UART2 - PTE17(RX) PTE16(TX) </li>
 </ul>
 <dl class="section warning"><dt>Warning</dt><dd>When KL46Z is connected to ZUMO, UART 1 is useless, because on PTE0 and PTE1 is I2C bus. </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00022">22</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8h_source.html#l00023">23</a> of file <a class="el" href="bluetooth_8h_source.html">bluetooth.h</a>.</p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ other = valid data </li>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>0 (NULL) and 13 (CR) are reserved. For one-byte commands use another character. For more details see interrupt handler. </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00211">211</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00212">212</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -338,7 +338,7 @@ other = valid data </li>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>Be sure that destination table is big enough to contain incoming string. Incoming string has to be ended with a (NULL) or (CR) character. </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00233">233</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00234">234</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -365,7 +365,7 @@ other = valid data </li>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>Be sure that CLOCK_SETUP in "system_MKL46Z4.c" equals 1. </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00089">89</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00090">90</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ other = valid data </li>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00169">169</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00170">170</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -442,7 +442,7 @@ other = valid data </li>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>String has to be ended with a '\0' (NULL) character! </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00192">192</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00193">193</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -468,7 +468,7 @@ other = valid data </li>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00253">253</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00254">254</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -506,7 +506,7 @@ other = valid data </li>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00264">264</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00265">265</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -544,7 +544,7 @@ other = valid data </li>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00270">270</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00271">271</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ other = valid data </li>
 <dl class="section return"><dt>Returns</dt><dd>Return value is the oldest character in buffer. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Function does not check whether buffer is empty. </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00284">284</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00285">285</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -609,7 +609,7 @@ other = valid data </li>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00295">295</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00296">296</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -647,7 +647,7 @@ other = valid data </li>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>Function does not check whether buffer is full. </dd></dl>
 
-<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00276">276</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
+<p>Definition at line <a class="el" href="bluetooth_8c_source.html#l00277">277</a> of file <a class="el" href="bluetooth_8c_source.html">bluetooth.c</a>.</p>
 
 </div>
 </div>
@@ -657,7 +657,7 @@ other = valid data </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_247f1ff60cf6c4d1682bf8bf6b337404.html">Zumo-Bluetooth</a></li><li class="navelem"><a class="el" href="bluetooth_8h.html">bluetooth.h</a></li>
-    <li class="footer">Generated on Thu Feb 26 2015 23:56:33 for Zumo-Bluetooth by
+    <li class="footer">Generated on Fri Feb 27 2015 18:29:11 for Zumo-Bluetooth by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

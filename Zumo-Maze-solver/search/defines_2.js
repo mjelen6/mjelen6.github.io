@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node',['NODE',['../zumo__maze_8h.html#a9a2bbc66102de668efe5e9c7feb23eaa',1,'zumo_maze.h']]]
+  ['max_5fnbr_5fof_5fnodes',['MAX_NBR_OF_NODES',['../zumo__maze_8h.html#a15146d4ba4ffa61b670448cd89654440',1,'zumo_maze.h']]]
 ];

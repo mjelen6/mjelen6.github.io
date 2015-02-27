@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="zumo__maze_8h.html">zumo_maze.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;MKL46Z4.h&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;motorDriver.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;zumo_ledArray.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="zumo__led_array_8h.html">zumo_ledArray.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Global variables</span></div>
@@ -128,15 +128,15 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="zumo__maze_8h.html#a6ed8def336fd0c10c71edf08401c1697">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__maze_8c.html#a6ed8def336fd0c10c71edf08401c1697">zm_calibration</a>( uint8_t speed ){</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// Enable the calibration in LED array</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    la_startCal();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="zumo__led_array_8c.html#a32c7d6b84769f952cd6c7759209482ef">la_startCal</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Start spinning</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    driveRight( speed );</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// Wait some time</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="zumo__maze_8c.html#a38f049df0aa368fa23eda6ae9b5164b7">_delay_ms</a>( 2000 );</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span>( la_getSensorState() != 0x0C ); <span class="comment">// Stop when the line is under LED array (2 center sensors)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C ); <span class="comment">// Stop when the line is under LED array (2 center sensors)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    driveStop();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Disable the calibration</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    la_stopCal();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="zumo__led_array_8c.html#a80842c42e85101e1d714a753aba9952a">la_stopCal</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="zumo__maze_8h.html#ad26fb5ea0b518683021fe8e99c97e244">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__maze_8c.html#ad26fb5ea0b518683021fe8e99c97e244">zm_driveToNode</a>( uint8_t speed ){</div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">while</span>( !<a class="code" href="zumo__maze_8h.html#a9a2bbc66102de668efe5e9c7feb23eaa">NODE</a> ){</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// Get error value</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">switch</span>( la_getSensorState() ){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">switch</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() ){</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">case</span> 0x10:  error = -3; <span class="keywordflow">break</span>;  <span class="comment">// Line under left side of array</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">case</span> 0x18:  error = -2; <span class="keywordflow">break</span>;</div>
@@ -221,27 +221,27 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">char</span> new_photo;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// White board means there is end of path. So return it.</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span>( la_getSensorState() == EMPTY ) <span class="keywordflow">return</span> DEAD_END;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == EMPTY ) <span class="keywordflow">return</span> DEAD_END;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Special sign (101101) means end of maze.</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( la_getSensorState() == FINISH ) <span class="keywordflow">return</span> MAZE_END;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == FINISH ) <span class="keywordflow">return</span> MAZE_END;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    </div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// Drive through the intersection until you reach...</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    driveForward( speed );</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">while</span>(  la_getSensorState() != EMPTY            <span class="comment">// ... white board.</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            &amp;&amp;  la_getSensorState() != CENTER           <span class="comment">// ... line under 2 center sensors</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            &amp;&amp;  la_getSensorState() != 0x04             <span class="comment">// ... line under one of center sensors</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            &amp;&amp;  la_getSensorState() != 0x08 ){      <span class="comment">// ... line under one of center sensors</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">while</span>(  <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != EMPTY            <span class="comment">// ... white board.</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            &amp;&amp;  <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != CENTER           <span class="comment">// ... line under 2 center sensors</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            &amp;&amp;  <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x04             <span class="comment">// ... line under one of center sensors</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            &amp;&amp;  <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x08 ){      <span class="comment">// ... line under one of center sensors</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span>( (la_getSensorState() &amp; LEFT) == LEFT ) leftAvailable = 1;               <span class="comment">// If you see line on the left, set &#39;left&#39; flag.</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span>( (la_getSensorState() &amp; RIGHT) == RIGHT ) rightAvailable = 1;        <span class="comment">// If you see line on the right, set &#39;right&#39; flag.</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span>( (<a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; LEFT) == LEFT ) leftAvailable = 1;               <span class="comment">// If you see line on the left, set &#39;left&#39; flag.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span>( (<a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; RIGHT) == RIGHT ) rightAvailable = 1;        <span class="comment">// If you see line on the right, set &#39;right&#39; flag.</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// Pass the node to get right position to turn.</span></div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="zumo__maze_8c.html#a38f049df0aa368fa23eda6ae9b5164b7">_delay_ms</a>( delay_time );</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    </div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">// Make a &#39;photo&#39;</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    new_photo = la_getSensorState();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    new_photo = <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>();</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// If there is a line under one sensor that means there is a route.</span></div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span>( new_photo == 0x04 || new_photo == 0x08 ) new_photo = CENTER;        </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
@@ -279,8 +279,8 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        reaction = <span class="charliteral">&#39;L&#39;</span>;                                                 <span class="comment">// ... set right reaction character,</span></div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="zumo__maze_8c.html#aa53311b81f6b93fddc9235d4b7a4f353">zm_addReaction</a>( reaction, &amp;nodeArr );       <span class="comment">// and put it in buffer.</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        driveLeft( speed );                                         <span class="comment">// Start turning left</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );        <span class="comment">// until you get another line (line -&gt; white -&gt; line sequence).</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );        <span class="comment">// until you get another line (line -&gt; white -&gt; line sequence).</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="comment">// If you can not do anything...</span></div>
@@ -288,7 +288,7 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        reaction = <span class="charliteral">&#39;T&#39;</span>;                                                 <span class="comment">// ... set right reaction character,</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="zumo__maze_8c.html#aa53311b81f6b93fddc9235d4b7a4f353">zm_addReaction</a>( reaction, &amp;nodeArr );       <span class="comment">// and put it in buffer.</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        driveRight( speed );                                        <span class="comment">// Turn around.</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// If there is not road on the left... </span></div>
@@ -300,16 +300,16 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == LEFT_TURN ){</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        reaction = <span class="charliteral">&#39;l&#39;</span>;</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        driveLeft( speed );                                         <span class="comment">// Turn in right direction.</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// The same as above.</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == RIGHT_TURN ){</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        reaction = <span class="charliteral">&#39;r&#39;</span>;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        driveRight( speed );</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">return</span> reaction;</div>
@@ -402,23 +402,23 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == DEAD_END ){</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        reaction = <a class="code" href="zumo__maze_8c.html#a7d58bd7c83167a5cee9e3cf3585732d7">zm_getReaction</a>( &amp;optimizedNodeArr );     <span class="comment">// ... get next command (&#39;T&#39;)</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        driveRight( speed );                                                            <span class="comment">// and turn around.</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// If node is some turn you do not have to get command.</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == LEFT_TURN ){  </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        reaction = <span class="charliteral">&#39;l&#39;</span>;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        driveLeft( speed );</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == RIGHT_TURN ){</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        reaction = <span class="charliteral">&#39;r&#39;</span>;</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        driveRight( speed );</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        driveStop();</div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    }</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    </div>
@@ -440,15 +440,15 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            </div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;L&#39;</span>:</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                driveLeft( speed );</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                driveStop();</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            </div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                driveRight( speed );</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                driveStop();</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            </div>
@@ -458,22 +458,22 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                <span class="keywordflow">if</span>( node_type == LEFT_RIGHT_CROSS || node_type == FULL_CROSS ){</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                    driveRight( speed );</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    <span class="comment">// On second line</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );       </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );       </div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                }</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == STRAIGHT_LEFT_CROSS ){</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    driveRight( speed );</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                    <span class="comment">// On first line</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                }</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                <span class="keywordflow">else</span> <span class="keywordflow">if</span>( node_type == STRAIGHT_RIGHT_CROSS ){</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;                    driveLeft( speed );</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;                    <span class="comment">// On first line</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() &amp; 0x0C );</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                    <span class="keywordflow">while</span>( la_getSensorState() != 0x0C );</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() &amp; 0x0C );</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                    <span class="keywordflow">while</span>( <a class="code" href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() != 0x0C );</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;                }</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;                driveStop();            </div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;                <span class="keywordflow">break</span>;</div>
@@ -489,8 +489,10 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="ttc" id="zumo__maze_8c_html_a67abdf16116ac7b804244626393187d6"><div class="ttname"><a href="zumo__maze_8c.html#a67abdf16116ac7b804244626393187d6">zm_strictNodeReaction</a></div><div class="ttdeci">char zm_strictNodeReaction(NodeArr_t *node_array, uint8_t node_type, uint8_t speed)</div><div class="ttdoc">Zumo performs reaction in the node according to external command. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00289">zumo_maze.c:289</a></div></div>
 <div class="ttc" id="struct_node_arr__t_html_a627979ca9ebdba1a8e549bc9c46510d8"><div class="ttname"><a href="struct_node_arr__t.html#a627979ca9ebdba1a8e549bc9c46510d8">NodeArr_t::max_index</a></div><div class="ttdeci">uint16_t max_index</div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8h_source.html#l00045">zumo_maze.h:45</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_a6ed8def336fd0c10c71edf08401c1697"><div class="ttname"><a href="zumo__maze_8c.html#a6ed8def336fd0c10c71edf08401c1697">zm_calibration</a></div><div class="ttdeci">void zm_calibration(uint8_t speed)</div><div class="ttdoc">Function is checking minimum and maximum value from each light sensor while Zumo is turning around...</div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00024">zumo_maze.c:24</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html"><div class="ttname"><a href="zumo__led_array_8h.html">zumo_ledArray.h</a></div><div class="ttdoc">Library for Freescale KL46Z and Pololu Zumo Reflectance Sensor Array. </div></div>
 <div class="ttc" id="zumo__maze_8c_html_aa53311b81f6b93fddc9235d4b7a4f353"><div class="ttname"><a href="zumo__maze_8c.html#aa53311b81f6b93fddc9235d4b7a4f353">zm_addReaction</a></div><div class="ttdeci">void zm_addReaction(char reaction, NodeArr_t *node_array)</div><div class="ttdoc">Function puts one character (movement code) to node buffer. Maximum number of elements is declared in...</div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00222">zumo_maze.c:222</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_a7d58bd7c83167a5cee9e3cf3585732d7"><div class="ttname"><a href="zumo__maze_8c.html#a7d58bd7c83167a5cee9e3cf3585732d7">zm_getReaction</a></div><div class="ttdeci">char zm_getReaction(NodeArr_t *node_array)</div><div class="ttdoc">Function getting one character from node buffer. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00228">zumo_maze.c:228</a></div></div>
+<div class="ttc" id="zumo__led_array_8c_html_a32c7d6b84769f952cd6c7759209482ef"><div class="ttname"><a href="zumo__led_array_8c.html#a32c7d6b84769f952cd6c7759209482ef">la_startCal</a></div><div class="ttdeci">void la_startCal(void)</div><div class="ttdoc">Function sets calibration flag. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00035">zumo_ledArray.c:35</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_ab0de47797b6fb5502a666f8cf12ac9af"><div class="ttname"><a href="zumo__maze_8c.html#ab0de47797b6fb5502a666f8cf12ac9af">nodeArr</a></div><div class="ttdeci">NodeArr_t nodeArr</div><div class="ttdoc">Buffer for registered actions. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00012">zumo_maze.c:12</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_a731e13726c4a55312654a175863af530"><div class="ttname"><a href="zumo__maze_8c.html#a731e13726c4a55312654a175863af530">zm_routeOptimizer</a></div><div class="ttdeci">void zm_routeOptimizer(const char *old_route, char *new_route)</div><div class="ttdoc">Function creates the shortest path based on previous. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00237">zumo_maze.c:237</a></div></div>
 <div class="ttc" id="zumo__maze_8h_html_a15146d4ba4ffa61b670448cd89654440"><div class="ttname"><a href="zumo__maze_8h.html#a15146d4ba4ffa61b670448cd89654440">MAX_NBR_OF_NODES</a></div><div class="ttdeci">#define MAX_NBR_OF_NODES</div><div class="ttdoc">Defines how many nodes will be in the maze. In one crossroad can be many nodes (Zumo may reach the sa...</div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8h_source.html#l00015">zumo_maze.h:15</a></div></div>
@@ -500,16 +502,18 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="ttc" id="struct_node_arr__t_html"><div class="ttname"><a href="struct_node_arr__t.html">NodeArr_t</a></div><div class="ttdoc">Buffer structure for nodeArr and optimizedNodeArr. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8h_source.html#l00043">zumo_maze.h:43</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_ad26fb5ea0b518683021fe8e99c97e244"><div class="ttname"><a href="zumo__maze_8c.html#ad26fb5ea0b518683021fe8e99c97e244">zm_driveToNode</a></div><div class="ttdeci">void zm_driveToNode(uint8_t speed)</div><div class="ttdoc">Function which allows to follow the line until Zumo will reach the node (crossroad, dead end etc. See -> Node_type). </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00038">zumo_maze.c:38</a></div></div>
 <div class="ttc" id="struct_node_arr__t_html_a902b981e72182f38ea9de310f20cc345"><div class="ttname"><a href="struct_node_arr__t.html#a902b981e72182f38ea9de310f20cc345">NodeArr_t::tab</a></div><div class="ttdeci">char tab[MAX_NBR_OF_NODES]</div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8h_source.html#l00044">zumo_maze.h:44</a></div></div>
+<div class="ttc" id="zumo__led_array_8c_html_a80842c42e85101e1d714a753aba9952a"><div class="ttname"><a href="zumo__led_array_8c.html#a80842c42e85101e1d714a753aba9952a">la_stopCal</a></div><div class="ttdeci">void la_stopCal(void)</div><div class="ttdoc">Function clears calibration flag. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00038">zumo_ledArray.c:38</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_a1c9996a9e5467f2cd928c7d7a1ba6ce1"><div class="ttname"><a href="zumo__maze_8c.html#a1c9996a9e5467f2cd928c7d7a1ba6ce1">zm_checkNode</a></div><div class="ttdeci">uint8_t zm_checkNode(uint8_t speed)</div><div class="ttdoc">Function checks which type of node is on the road. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00112">zumo_maze.c:112</a></div></div>
 <div class="ttc" id="zumo__maze_8c_html_a746835faaff61f1e86039309092366c2"><div class="ttname"><a href="zumo__maze_8c.html#a746835faaff61f1e86039309092366c2">zm_clearArray</a></div><div class="ttdeci">void zm_clearArray(NodeArr_t *node_array)</div><div class="ttdoc">Function puts zeros to buffer. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__maze_8c_source.html#l00016">zumo_maze.c:16</a></div></div>
 <div class="ttc" id="zumo__maze_8h_html"><div class="ttname"><a href="zumo__maze_8h.html">zumo_maze.h</a></div><div class="ttdoc">Maze solver library prepared for Freescale KL46Z board and Pololu Zumo Shield. </div></div>
+<div class="ttc" id="zumo__led_array_8c_html_abc6bc56488668d7ffba60574c1374144"><div class="ttname"><a href="zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a></div><div class="ttdeci">char la_getSensorState(void)</div><div class="ttdoc">This function returns status of each sensor. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00156">zumo_ledArray.c:156</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_57a8ae3804c95259bf318aa93fd70fae.html">Zumo-Maze-solver</a></li><li class="navelem"><a class="el" href="zumo__maze_8c.html">zumo_maze.c</a></li>
-    <li class="footer">Generated on Thu Feb 26 2015 23:59:54 for Zumo-Maze-solver by
+    <li class="footer">Generated on Fri Feb 27 2015 18:30:36 for Zumo-Maze-solver by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

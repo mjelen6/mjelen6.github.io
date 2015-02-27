@@ -1,7 +1,22 @@
 var searchData=
 [
-  ['main',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
-  ['max_5findex',['max_index',['../struct_node_arr__t.html#a627979ca9ebdba1a8e549bc9c46510d8',1,'NodeArr_t']]],
-  ['max_5fnbr_5fof_5fnodes',['MAX_NBR_OF_NODES',['../zumo__maze_8h.html#a15146d4ba4ffa61b670448cd89654440',1,'zumo_maze.h']]]
+  ['la_5fcalculatesensorstate',['la_calculateSensorState',['../zumo__led_array_8c.html#a14acac7e08664c3b6255ac7391eb09d4',1,'la_calculateSensorState(volatile la_sensor_t *sensor_array):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a14acac7e08664c3b6255ac7391eb09d4',1,'la_calculateSensorState(volatile la_sensor_t *sensor_array):&#160;zumo_ledArray.c']]],
+  ['la_5fcalibrateminmax',['la_calibrateMinMax',['../zumo__led_array_8c.html#aaecbd2d7dc60340959cb832b0a936b15',1,'la_calibrateMinMax(volatile la_sensor_t *sensor_array):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#aaecbd2d7dc60340959cb832b0a936b15',1,'la_calibrateMinMax(volatile la_sensor_t *sensor_array):&#160;zumo_ledArray.c']]],
+  ['la_5fgetlptmrcnr',['la_getLptmrCNR',['../zumo__led_array_8c.html#a6564668e00e247cccee27f78d4ee5741',1,'la_getLptmrCNR(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a6564668e00e247cccee27f78d4ee5741',1,'la_getLptmrCNR(void):&#160;zumo_ledArray.c']]],
+  ['la_5fgetpercentagereflectance',['la_getPercentageReflectance',['../zumo__led_array_8c.html#a7b4e20e64ea6bb3d6632fe07585dbcd6',1,'la_getPercentageReflectance(int16_t *output_array):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a7b4e20e64ea6bb3d6632fe07585dbcd6',1,'la_getPercentageReflectance(int16_t *output_array):&#160;zumo_ledArray.c']]],
+  ['la_5fgetsensorstate',['la_getSensorState',['../zumo__led_array_8c.html#abc6bc56488668d7ffba60574c1374144',1,'la_getSensorState(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144',1,'la_getSensorState(void):&#160;zumo_ledArray.c']]],
+  ['la_5finit',['la_init',['../zumo__led_array_8c.html#a59b28f0bbe153f9c2172066b437b4431',1,'la_init(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a59b28f0bbe153f9c2172066b437b4431',1,'la_init(void):&#160;zumo_ledArray.c']]],
+  ['la_5flptmr_5fdelay_5fcap_5fdischarge',['LA_LPTMR_DELAY_CAP_DISCHARGE',['../zumo__led_array_8h.html#ac6e759c50dde8c23dc207b2e0ab6a5e2',1,'zumo_ledArray.h']]],
+  ['la_5flptmr_5fdelay_5fcap_5fmax_5fcharge',['LA_LPTMR_DELAY_CAP_MAX_CHARGE',['../zumo__led_array_8h.html#a027e5ea6c985b69b515b3793888858ef',1,'zumo_ledArray.h']]],
+  ['la_5fpercentage_5fswitching_5flevel',['LA_PERCENTAGE_SWITCHING_LEVEL',['../zumo__led_array_8h.html#ab3f42dffd6994b926f0d3d19dcf501e6',1,'zumo_ledArray.h']]],
+  ['la_5fpins_5fas_5finputs',['la_pins_as_inputs',['../zumo__led_array_8c.html#a73600f9119563ff029a79b4a9d4d077f',1,'la_pins_as_inputs(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a73600f9119563ff029a79b4a9d4d077f',1,'la_pins_as_inputs(void):&#160;zumo_ledArray.c']]],
+  ['la_5fpins_5fas_5foutputs_5fand_5fhigh',['la_pins_as_outputs_and_high',['../zumo__led_array_8c.html#ac9c0f431d82c25c370d7fad51661b211',1,'la_pins_as_outputs_and_high(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#ac9c0f431d82c25c370d7fad51661b211',1,'la_pins_as_outputs_and_high(void):&#160;zumo_ledArray.c']]],
+  ['la_5fpins_5finit',['la_pins_init',['../zumo__led_array_8c.html#a337d6814f1a3b2d1d6b365d75c34e3ef',1,'la_pins_init(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a337d6814f1a3b2d1d6b365d75c34e3ef',1,'la_pins_init(void):&#160;zumo_ledArray.c']]],
+  ['la_5fsensor_5ft',['la_sensor_t',['../structla__sensor__t.html',1,'']]],
+  ['la_5fstartcal',['la_startCal',['../zumo__led_array_8c.html#a32c7d6b84769f952cd6c7759209482ef',1,'la_startCal(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a32c7d6b84769f952cd6c7759209482ef',1,'la_startCal(void):&#160;zumo_ledArray.c']]],
+  ['la_5fstate',['la_state',['../zumo__led_array_8c.html#a67a3e53e87d294ef560c6ab98805c51b',1,'zumo_ledArray.c']]],
+  ['la_5fstopcal',['la_stopCal',['../zumo__led_array_8c.html#a80842c42e85101e1d714a753aba9952a',1,'la_stopCal(void):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a80842c42e85101e1d714a753aba9952a',1,'la_stopCal(void):&#160;zumo_ledArray.c']]],
+  ['ledarr',['ledArr',['../zumo__led_array_8c.html#aac67b44fd8522f1794cc20210b6e30b9',1,'zumo_ledArray.c']]],
+  ['lptimer_5firqhandler',['LPTimer_IRQHandler',['../zumo__led_array_8c.html#a1fa2da1558b73250cfb07ab3dedfcf1f',1,'zumo_ledArray.c']]],
+  ['lptimer_5freload',['lptimer_reload',['../zumo__led_array_8c.html#a7caaad9cec5c5d2faaadc1fee71db81f',1,'lptimer_reload(uint16_t time):&#160;zumo_ledArray.c'],['../zumo__led_array_8h.html#a7caaad9cec5c5d2faaadc1fee71db81f',1,'lptimer_reload(uint16_t time):&#160;zumo_ledArray.c']]]
 ];

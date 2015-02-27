@@ -105,45 +105,72 @@ $(document).ready(function(){initNavTree('zumo__led_array_8h_source.html','');})
 <div class="title">zumo_ledArray.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ZUMO_LEDARRAY_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ZUMO_LEDARRAY_H_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;MKL46Z4.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define LA_LPTMR_DELAY_CAP_CHARGE   5</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define LA_LPTMR_DELAY_CAP_MAX_DISCHARGE 0xffff</span></div>
+<a href="zumo__led_array_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef ZUMO_LEDARRAY_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define ZUMO_LEDARRAY_H_</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define LA_PERCENTAGE_SWITCHING_LEVEL 50</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;MKL46Z4.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structla__sensor__t.html">   11</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    uint16_t value;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    uint16_t min;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    uint16_t max;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;} <a class="code" href="structla__sensor__t.html">la_sensor_t</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> la_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> la_startCal(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> la_stopCal(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">char</span> la_getSensorState(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span> la_getPercentageReflectance( int16_t * output_array );</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> la_pins_init(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> la_pins_as_inputs(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> la_pins_as_outputs_and_high(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> lptimer_reload( uint16_t time_ms );</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;uint16_t la_getLptmrCNR(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> la_calibrateMinMax( <span class="keyword">volatile</span> <a class="code" href="structla__sensor__t.html">la_sensor_t</a> * sensor_array );</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">char</span> la_calculateSensorState( <span class="keyword">volatile</span> <a class="code" href="structla__sensor__t.html">la_sensor_t</a> * sensor_array );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="structla__sensor__t_html"><div class="ttname"><a href="structla__sensor__t.html">la_sensor_t</a></div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8h_source.html#l00011">zumo_ledArray.h:11</a></div></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="zumo__led_array_8h.html#ac6e759c50dde8c23dc207b2e0ab6a5e2">   14</a></span>&#160;<span class="preprocessor">#define LA_LPTMR_DELAY_CAP_DISCHARGE    5</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="zumo__led_array_8h.html#a027e5ea6c985b69b515b3793888858ef">   19</a></span>&#160;<span class="preprocessor">#define LA_LPTMR_DELAY_CAP_MAX_CHARGE 0xffff</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="zumo__led_array_8h.html#ab3f42dffd6994b926f0d3d19dcf501e6">   24</a></span>&#160;<span class="preprocessor">#define LA_PERCENTAGE_SWITCHING_LEVEL 50</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structla__sensor__t.html">   29</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structla__sensor__t.html#a900b69af7d674b8db3bceae754b4955a">   30</a></span>&#160;    uint16_t <a class="code" href="structla__sensor__t.html#a900b69af7d674b8db3bceae754b4955a">value</a>;     </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structla__sensor__t.html#a1a1f4624f66ab0b2eb0b98316514c369">   31</a></span>&#160;    uint16_t <a class="code" href="structla__sensor__t.html#a1a1f4624f66ab0b2eb0b98316514c369">min</a>;           </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structla__sensor__t.html#ac66b569507cc273bbf83ce5dd5f70e84">   32</a></span>&#160;    uint16_t <a class="code" href="structla__sensor__t.html#ac66b569507cc273bbf83ce5dd5f70e84">max</a>;           </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <a class="code" href="structla__sensor__t.html">la_sensor_t</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a59b28f0bbe153f9c2172066b437b4431">la_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a32c7d6b84769f952cd6c7759209482ef">la_startCal</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a80842c42e85101e1d714a753aba9952a">la_stopCal</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">char</span> <a class="code" href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a7b4e20e64ea6bb3d6632fe07585dbcd6">la_getPercentageReflectance</a>( int16_t * output_array );</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a337d6814f1a3b2d1d6b365d75c34e3ef">la_pins_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a73600f9119563ff029a79b4a9d4d077f">la_pins_as_inputs</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#ac9c0f431d82c25c370d7fad51661b211">la_pins_as_outputs_and_high</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#a7caaad9cec5c5d2faaadc1fee71db81f">lptimer_reload</a>( uint16_t time );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;uint16_t <a class="code" href="zumo__led_array_8h.html#a6564668e00e247cccee27f78d4ee5741">la_getLptmrCNR</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__led_array_8h.html#aaecbd2d7dc60340959cb832b0a936b15">la_calibrateMinMax</a>( <span class="keyword">volatile</span> <a class="code" href="structla__sensor__t.html">la_sensor_t</a> * sensor_array );</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">char</span> <a class="code" href="zumo__led_array_8h.html#a14acac7e08664c3b6255ac7391eb09d4">la_calculateSensorState</a>( <span class="keyword">volatile</span> <a class="code" href="structla__sensor__t.html">la_sensor_t</a> * sensor_array );</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="zumo__led_array_8h_html_a7b4e20e64ea6bb3d6632fe07585dbcd6"><div class="ttname"><a href="zumo__led_array_8h.html#a7b4e20e64ea6bb3d6632fe07585dbcd6">la_getPercentageReflectance</a></div><div class="ttdeci">void la_getPercentageReflectance(int16_t *output_array)</div><div class="ttdoc">This function calculates relative &#39;surface reflectivity&#39;. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00131">zumo_ledArray.c:131</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_abc6bc56488668d7ffba60574c1374144"><div class="ttname"><a href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a></div><div class="ttdeci">char la_getSensorState(void)</div><div class="ttdoc">This function returns status of each sensor. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00156">zumo_ledArray.c:156</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a59b28f0bbe153f9c2172066b437b4431"><div class="ttname"><a href="zumo__led_array_8h.html#a59b28f0bbe153f9c2172066b437b4431">la_init</a></div><div class="ttdeci">void la_init(void)</div><div class="ttdoc">Function prepares LED array pins and LPTMR to work. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00016">zumo_ledArray.c:16</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a80842c42e85101e1d714a753aba9952a"><div class="ttname"><a href="zumo__led_array_8h.html#a80842c42e85101e1d714a753aba9952a">la_stopCal</a></div><div class="ttdeci">void la_stopCal(void)</div><div class="ttdoc">Function clears calibration flag. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00038">zumo_ledArray.c:38</a></div></div>
+<div class="ttc" id="structla__sensor__t_html_a900b69af7d674b8db3bceae754b4955a"><div class="ttname"><a href="structla__sensor__t.html#a900b69af7d674b8db3bceae754b4955a">la_sensor_t::value</a></div><div class="ttdeci">uint16_t value</div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8h_source.html#l00030">zumo_ledArray.h:30</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_aaecbd2d7dc60340959cb832b0a936b15"><div class="ttname"><a href="zumo__led_array_8h.html#aaecbd2d7dc60340959cb832b0a936b15">la_calibrateMinMax</a></div><div class="ttdeci">void la_calibrateMinMax(volatile la_sensor_t *sensor_array)</div><div class="ttdoc">This function decides which colour is under each sensor (1 means dark/black) </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00122">zumo_ledArray.c:122</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_ac9c0f431d82c25c370d7fad51661b211"><div class="ttname"><a href="zumo__led_array_8h.html#ac9c0f431d82c25c370d7fad51661b211">la_pins_as_outputs_and_high</a></div><div class="ttdeci">void la_pins_as_outputs_and_high(void)</div><div class="ttdoc">Function sets pins as outputs and disables interrupts. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00088">zumo_ledArray.c:88</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a7caaad9cec5c5d2faaadc1fee71db81f"><div class="ttname"><a href="zumo__led_array_8h.html#a7caaad9cec5c5d2faaadc1fee71db81f">lptimer_reload</a></div><div class="ttdeci">void lptimer_reload(uint16_t time)</div><div class="ttdoc">This function resets LPTMR and set time value. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00107">zumo_ledArray.c:107</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a32c7d6b84769f952cd6c7759209482ef"><div class="ttname"><a href="zumo__led_array_8h.html#a32c7d6b84769f952cd6c7759209482ef">la_startCal</a></div><div class="ttdeci">void la_startCal(void)</div><div class="ttdoc">Function sets calibration flag. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00035">zumo_ledArray.c:35</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a6564668e00e247cccee27f78d4ee5741"><div class="ttname"><a href="zumo__led_array_8h.html#a6564668e00e247cccee27f78d4ee5741">la_getLptmrCNR</a></div><div class="ttdeci">uint16_t la_getLptmrCNR(void)</div><div class="ttdoc">This function reads CNR register. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00114">zumo_ledArray.c:114</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a14acac7e08664c3b6255ac7391eb09d4"><div class="ttname"><a href="zumo__led_array_8h.html#a14acac7e08664c3b6255ac7391eb09d4">la_calculateSensorState</a></div><div class="ttdeci">char la_calculateSensorState(volatile la_sensor_t *sensor_array)</div><div class="ttdoc">This function decides which colour is under each sensor (1 means dark/black) </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00139">zumo_ledArray.c:139</a></div></div>
+<div class="ttc" id="structla__sensor__t_html_a1a1f4624f66ab0b2eb0b98316514c369"><div class="ttname"><a href="structla__sensor__t.html#a1a1f4624f66ab0b2eb0b98316514c369">la_sensor_t::min</a></div><div class="ttdeci">uint16_t min</div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8h_source.html#l00031">zumo_ledArray.h:31</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a337d6814f1a3b2d1d6b365d75c34e3ef"><div class="ttname"><a href="zumo__led_array_8h.html#a337d6814f1a3b2d1d6b365d75c34e3ef">la_pins_init</a></div><div class="ttdeci">void la_pins_init(void)</div><div class="ttdoc">This function prepares LED array pins (multiplexers, pull-up/pull-down resistors, NVIC) ...</div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00042">zumo_ledArray.c:42</a></div></div>
+<div class="ttc" id="structla__sensor__t_html_ac66b569507cc273bbf83ce5dd5f70e84"><div class="ttname"><a href="structla__sensor__t.html#ac66b569507cc273bbf83ce5dd5f70e84">la_sensor_t::max</a></div><div class="ttdeci">uint16_t max</div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8h_source.html#l00032">zumo_ledArray.h:32</a></div></div>
+<div class="ttc" id="zumo__led_array_8h_html_a73600f9119563ff029a79b4a9d4d077f"><div class="ttname"><a href="zumo__led_array_8h.html#a73600f9119563ff029a79b4a9d4d077f">la_pins_as_inputs</a></div><div class="ttdeci">void la_pins_as_inputs(void)</div><div class="ttdoc">As the name suggests, function sets pins as inputs and enables interrupts. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8c_source.html#l00073">zumo_ledArray.c:73</a></div></div>
+<div class="ttc" id="structla__sensor__t_html"><div class="ttname"><a href="structla__sensor__t.html">la_sensor_t</a></div><div class="ttdoc">Buffer structure for ledArr. </div><div class="ttdef"><b>Definition:</b> <a href="zumo__led_array_8h_source.html#l00029">zumo_ledArray.h:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_57a8ae3804c95259bf318aa93fd70fae.html">Zumo-Maze-solver</a></li><li class="navelem"><b>zumo_ledArray.h</b></li>
-    <li class="footer">Generated on Thu Feb 26 2015 23:59:54 for Zumo-Maze-solver by
+    <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_57a8ae3804c95259bf318aa93fd70fae.html">Zumo-Maze-solver</a></li><li class="navelem"><a class="el" href="zumo__led_array_8h.html">zumo_ledArray.h</a></li>
+    <li class="footer">Generated on Fri Feb 27 2015 18:30:36 for Zumo-Maze-solver by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

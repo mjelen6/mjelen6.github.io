@@ -148,7 +148,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>EMPTY</b>&#160;&#160;&#160;0x00</td></tr>
 <tr class="separator:ga2b7cf2a3641be7b89138615764d60ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a2bbc66102de668efe5e9c7feb23eaa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a2bbc66102de668efe5e9c7feb23eaa"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zumo__maze_8h.html#a9a2bbc66102de668efe5e9c7feb23eaa">NODE</a>&#160;&#160;&#160;((la_getSensorState() == FINISH)||(la_getSensorState() == ALL)||(la_getSensorState() == LEFT)||(la_getSensorState() == RIGHT)||(la_getSensorState() == EMPTY))</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zumo__maze_8h.html#a9a2bbc66102de668efe5e9c7feb23eaa">NODE</a>&#160;&#160;&#160;((<a class="el" href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == FINISH)||(<a class="el" href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == ALL)||(<a class="el" href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == LEFT)||(<a class="el" href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == RIGHT)||(<a class="el" href="zumo__led_array_8h.html#abc6bc56488668d7ffba60574c1374144">la_getSensorState</a>() == EMPTY))</td></tr>
 <tr class="memdesc:a9a2bbc66102de668efe5e9c7feb23eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Node definition. <br /></td></tr>
 <tr class="separator:a9a2bbc66102de668efe5e9c7feb23eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -514,7 +514,7 @@ r - right turn (turn right but do not save this reaction) </li>
 </div><div class="memdoc">
 
 <p>Function creates the shortest path based on previous. </p>
-<p>Function searches for 'T' reaction and right combination of adjacent values. Rules </p><ul>
+<p>Function looks for 'T' reaction and right combination of adjacent values. Rules </p><ul>
 <li>
 LTR = T </li>
 <li>
@@ -592,7 +592,7 @@ LTL = S </li>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_57a8ae3804c95259bf318aa93fd70fae.html">Zumo-Maze-solver</a></li><li class="navelem"><a class="el" href="zumo__maze_8h.html">zumo_maze.h</a></li>
-    <li class="footer">Generated on Thu Feb 26 2015 23:59:54 for Zumo-Maze-solver by
+    <li class="footer">Generated on Fri Feb 27 2015 18:30:36 for Zumo-Maze-solver by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
