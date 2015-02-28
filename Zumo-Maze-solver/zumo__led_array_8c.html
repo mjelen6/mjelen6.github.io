@@ -186,6 +186,16 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Library for Freescale KL46Z and Pololu Zumo Reflectance Sensor Array. </p>
+<p>Requirements (hardware and software): </p><ul>
+<li>
+Sensor pinout (from left): PTA4, PTC1, PTD6, PTC2, PTD3,PTA5. </li>
+<li>
+Disabled NMI. In startup_MKL46Z4.s (line 202) replace FOPT EQU 0xFF with FOPT EQU 0xFB </li>
+<li>
+CLOCK_SETUP in system_MKL46Z4.c equals 1 </li>
+<li>
+PEMicro soft in programmer. When there is CMSIS on PTC1 is always 'high' (probably pull-up resistor in programmer is not disabled). </li>
+</ul>
 
 <p>Definition in file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -212,7 +222,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return value is byte with binary coded sensor state (last 6 bits, '1' means dark). </dd></dl>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00139">139</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00146">146</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -239,7 +249,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return value is byte with binary coded sensor state (last 6 bits, '1' means dark). </dd></dl>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00122">122</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00129">129</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -260,7 +270,7 @@ Variables</h2></td></tr>
 <p>This function reads CNR register. </p>
 <p>We had to create this function because each reading of this register has to be preceded by writing something to it. </p><dl class="section return"><dt>Returns</dt><dd>Return value is number from LPTMR CNR </dd></dl>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00114">114</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00121">121</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -287,7 +297,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>Output array has to have six elements. </dd></dl>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00131">131</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00138">138</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -308,7 +318,7 @@ Variables</h2></td></tr>
 <p>This function returns status of each sensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return value is byte with binary coded sensor state (last 6 bits, '1' means dark). </dd></dl>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00156">156</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00163">163</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -334,7 +344,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00107">107</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00114">114</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -355,7 +365,7 @@ Variables</h2></td></tr>
 <p>Voltage drop function for two sensors. </p>
 <p>This functions works simply. It decides which sensor has triggered the interrupt. Reads it's time and saves it in array. When voltage on each sensor has dropped it reloads timer and sensor counter and calculates state of sensors. </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00179">179</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00186">186</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -376,7 +386,7 @@ Variables</h2></td></tr>
 <p>Voltage drop function for four sensors. </p>
 <p>It works like <a class="el" href="zumo__led_array_8c.html#ae01b365de69142666b470757d24fae84" title="Voltage drop function for two sensors. ">PORTA_IRQHandler</a> </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00214">214</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00221">221</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -392,7 +402,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Calibration flag which allow LED array to perfotm self-calibration </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00013">13</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00020">20</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -407,7 +417,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Encoded status of each sensor (six last bits) </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00011">11</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00018">18</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -422,7 +432,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Six sensors array </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00010">10</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00017">17</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -437,7 +447,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Counter how many sensors has been readed </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00012">12</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00019">19</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -452,7 +462,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Semaphore </p>
 
-<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00014">14</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
+<p>Definition at line <a class="el" href="zumo__led_array_8c_source.html#l00021">21</a> of file <a class="el" href="zumo__led_array_8c_source.html">zumo_ledArray.c</a>.</p>
 
 </div>
 </div>
@@ -462,7 +472,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_57a8ae3804c95259bf318aa93fd70fae.html">Zumo-Maze-solver</a></li><li class="navelem"><a class="el" href="zumo__led_array_8c.html">zumo_ledArray.c</a></li>
-    <li class="footer">Generated on Fri Feb 27 2015 18:30:36 for Zumo-Maze-solver by
+    <li class="footer">Generated on Sat Feb 28 2015 16:26:03 for Zumo-Maze-solver by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>
