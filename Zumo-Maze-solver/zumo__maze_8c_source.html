@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Zumo-Maze-solver: C:/Zumo/Zumo-Maze-solver/zumo_maze.c Source File</title>
+<title>Zumo-Maze_solver: C:/Zumo/Zumo-Maze-solver/zumo_maze.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -29,7 +29,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Zumo-Maze-solver
+   <div id="projectname">Zumo-Maze_solver
    </div>
   </td>
  </tr>
@@ -340,7 +340,7 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
 <div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="zumo__maze_8h.html#a731e13726c4a55312654a175863af530">  237</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="zumo__maze_8c.html#a731e13726c4a55312654a175863af530">zm_routeOptimizer</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> * old_route, <span class="keywordtype">char</span> * new_route){</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">char</span> temp[ <a class="code" href="zumo__maze_8h.html#a15146d4ba4ffa61b670448cd89654440">MAX_NBR_OF_NODES</a> ];</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> temp[ <a class="code" href="zumo__maze_8h.html#a15146d4ba4ffa61b670448cd89654440">MAX_NBR_OF_NODES</a> ];</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  uint8_t compressed = 0;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    </div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// Hop will be 1 or 3. It depend on &#39;T&#39; command in node array.</span></div>
@@ -350,7 +350,7 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  uint16_t route_table_length = strlen(old_route);</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    </div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// Clear temp array</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;route_table_length; i++) *((<span class="keywordtype">char</span>*)temp+i) = 0;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">//for(i=0; i&lt;route_table_length; i++)   *((char*)temp+i) = 0;</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// Read each command</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">for</span>( i=0; i&lt;route_table_length; i += hop ){</div>
@@ -513,7 +513,7 @@ $(document).ready(function(){initNavTree('zumo__maze_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_187cade3614a7d6717ec20c39413a03b.html">Zumo</a></li><li class="navelem"><a class="el" href="dir_57a8ae3804c95259bf318aa93fd70fae.html">Zumo-Maze-solver</a></li><li class="navelem"><a class="el" href="zumo__maze_8c.html">zumo_maze.c</a></li>
-    <li class="footer">Generated on Sat Feb 28 2015 16:26:03 for Zumo-Maze-solver by
+    <li class="footer">Generated on Mon Mar 2 2015 01:00:45 for Zumo-Maze_solver by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.8 </li>
   </ul>

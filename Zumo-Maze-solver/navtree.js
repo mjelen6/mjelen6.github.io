@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "Zumo-Maze-solver", "index.html", [
+  [ "Zumo-Maze_solver", "index.html", [
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", null, [
       [ "Data Structures", "annotated.html", "annotated" ],
